@@ -56,8 +56,26 @@ let characters = [
 
 const sortByChildren = (charArray) => {
   // Solution code here...
+  // charArray.sort((obj1, obj2) => {
+  //   if (obj1.children.length - obj2.children.length !== 0) {
+  //     return obj1.children.length - obj2.children.length;
+  //   } else {
+  //     for (let i = 0; obj1.house.length; i++) {
+  //       if (obj1.house[i].charCodeAt() - obj1.house[i].charCodeAt() !== 0) {
+  //         return obj1.house[i].charCodeAt() - obj1.house[i].charCodeAt();
+  //       }
+  //     }
+  //   }
 
-
+  //   return 0;
+  // });
+  // return charArray;
+  let Array = charArray.sort((obj1, obj2) => {
+    if (obj1.children.length < obj2.children.length) {
+      return -1;
+    }
+  });
+  return Array;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -135,7 +153,7 @@ const citiesAtoJ = (arr) => {
 
   arr.forEach((item)=>{
     if(item.replace(/ /g, "").match(regex)){
-      NewArray.push(item.match(regex));
+      NewArray.push(item.match(regex).toString());
     }
   });
   console.log(NewArray);
