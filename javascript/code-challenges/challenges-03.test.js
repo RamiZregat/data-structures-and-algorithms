@@ -26,8 +26,8 @@ For example, typeNum([1, 'bob' ,3]) returns [1,3].
 const typeNum = (arr) => {
   // Solution code here...
   let NewArray=arr.filter(item=>{
-return (parseInt(item) == item);
-  })
+    return (parseInt(item) === item);
+  });
   return NewArray;
 };
 
@@ -43,7 +43,7 @@ const containsAnd = (arr) => {
   // Solution code here...
   let NewArray=arr.filter(item=>{
     return(item.includes('and')
-  )})
+    );});
   return NewArray;
 };
 
@@ -58,8 +58,8 @@ For example, oddValues([1,2,3]) returns [1,3].
 const oddValues = (arr) => {
   // Solution code here...
   let NewArray=arr.filter(item=>{
-    return (item % 2)
-  })
+    return (item % 2 !==0);
+  });
   return NewArray;
 };
 
