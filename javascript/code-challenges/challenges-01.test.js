@@ -8,14 +8,15 @@ Write a function named `addOne` that takes an array of numbers, and returns a ne
 Use `forEach` to loop over the input array and work with each value.  Push the new value into a local array. Return the local array;
 ------------------------------------------------------------------------------------------------ */
 
-let NewArray=[]
+let NewArray=[];
 const addOne = (arr) => {
   // Solution code here...
   arr.forEach(item => {
-    NewArray.push(item+1)
+    NewArray.push(item+1);
   });
   return NewArray;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -65,11 +66,11 @@ const greeting = (word) => word.toUpperCase()+'!';
 
 const speaker = (words, callback) => {
   // Solution code here...
-  let NewArray=[]
+  let NewArray=[];
   words.forEach(item =>{
-    NewArray.push(callback(item))
-  })
-  return NewArray
+    NewArray.push(callback(item));
+  });
+  return NewArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -90,15 +91,15 @@ Return the modified array.
 
 const addValues = (arr, value) => {
   // Solution code here...
-  arr.push(value)
+  arr.push(value);
 };
 
 const addNumbers = (num, arr, times, callback) => {
   // Solution code here...
-for(let i=0;i<times;i++){
-callback(arr,num);
-}
-return arr;
+  for(let i=0;i<times;i++){
+    callback(arr,num);
+  }
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -146,6 +147,18 @@ Return the resulting output array.
 
 const fizzbuzz = (arr) => {
   // Solution code here...
+  let newArray=[];
+  arr.forEach(item => {
+    if(item%3===0 && item%5===0){
+      newArray.push('Fizz Buzz');
+    }else if(item%5===0){
+      newArray.push('Buzz');
+    }else if(item%3===0){
+      newArray.push('Fizz');
+    }
+  });
+  console.log(newArray);
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
