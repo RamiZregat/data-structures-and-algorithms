@@ -97,4 +97,48 @@ describe('Linked List Test', () => {
     newLinkedList.insertAfter(2,'Happy Path');
     expect(newLinkedList.tail.value).toEqual('Happy Path');
   });
+
+});
+describe('Linked List kth',()=>{
+
+  it(('test where the number is greater than the length of the linked list'),()=>{
+    let newLinkedList = new LinkedList();
+    newLinkedList.insert(1);
+    newLinkedList.insert(2);
+    newLinkedList.insert(3);
+    expect(newLinkedList.kthFromEnd(5)).toEqual(null);
+  });
+
+  it(('test where the number and the length of the linked list are the same'),()=>{
+    let newLinkedList = new LinkedList();
+    newLinkedList.insert(1);
+    newLinkedList.insert(2);
+    newLinkedList.insert(3);
+    expect(newLinkedList.kthFromEnd(3)).toEqual(null);
+  });
+
+  it(('test Where the number is not a positive integer'),()=>{
+    let newLinkedList = new LinkedList();
+    newLinkedList.insert(1);
+    newLinkedList.insert(2);
+    newLinkedList.insert(3);
+    expect(newLinkedList.kthFromEnd(-1)).toEqual(null);
+  });
+
+  it(('test Where the linked list is of a size 1'),()=>{
+    let newLinkedList = new LinkedList();
+    newLinkedList.insert(1);
+    expect(newLinkedList.kthFromEnd(0)).toEqual(1);
+  });
+
+  it(('test where the number is not at the end, but somewhere in the middle of the linked list'),()=>{
+    let newLinkedList = new LinkedList();
+    newLinkedList.insert(1);
+    newLinkedList.insert(2);
+    newLinkedList.insert(3);
+    newLinkedList.insert(4);
+    newLinkedList.insert(5);
+    newLinkedList.insert(6);
+    expect(newLinkedList.kthFromEnd(3)).toEqual(3);
+  });
 });

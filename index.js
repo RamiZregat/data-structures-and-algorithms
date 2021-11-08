@@ -13,4 +13,5 @@ newList.insert(6);
 newList.insert(7);
 newList.includes(20);
 newList.toString();
-console.log(newList);
+console.log(newList.toString());
+console.log(newList.kthFromEnd(1));

@@ -136,5 +136,26 @@ class LinkedList {
     }
   }
 
+  kthFromEnd(number){
+
+    if(number<0){
+      return null;
+    }
+    if(!this.head){
+      return null;
+    }
+    if(number!==parseInt(number)){
+      return null;
+    }
+    let arr=this.toString().split(' -> ');
+    arr.pop();
+    console.log(arr);
+    if(number>=arr.length){
+      return null;
+    }
+    return parseInt(arr[arr.length-number-1].replace(/\D/g, ''));
+  }
+
 }
 module.exports = LinkedList;
+
