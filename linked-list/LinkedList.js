@@ -177,5 +177,25 @@ class LinkedList {
     }
     return currectValue.value;
   }
+
 }
-module.exports = LinkedList;
+function zipLists(list1, list2) {
+  let curValue1 = list1.head;
+  let curValue2 = list2.head;
+  let list3 = new LinkedList();
+  while (curValue1 || curValue2) {
+    if (curValue1 !== null) {
+      list3.append(curValue1.value);
+      curValue1 = curValue1.next;
+    }
+    if (curValue2 !== null) {
+      list3.append(curValue2.value);
+      curValue2 = curValue2.next;
+    }
+  }
+  return list3.toString();
+}
+module.exports ={
+  LinkedList,
+  zipLists,
+};

@@ -3,15 +3,25 @@
 const LinkedList = require('./linked-list/LinkedList');
 
 
-const newList=new LinkedList();
-newList.insert(1);
-newList.insert(2);
-newList.insert(3);
-newList.insert(4);
-newList.insert(5);
-newList.insert(6);
-newList.insert(7);
-newList.includes(20);
-newList.toString();
-console.log(newList.toString());
-console.log(newList.kthFromEnd(1));
+const newList1=new LinkedList();
+newList1.insert(1);
+newList1.insert(3);
+newList1.insert(5);
+newList1.insert(7);
+newList1.insert(9);
+newList1.insert(11);
+newList1.insert(13);
+
+const newList2=new LinkedList();
+newList2.insert(2);
+newList2.insert(4);
+newList2.insert(6);
+newList2.insert(8);
+
+
+const newList3=new LinkedList();
+newList3.zipLists(newList1,newList2);
+
+console.log(newList1);
+console.log(newList2);
+console.log(newList3.zipLists(newList1,newList2));

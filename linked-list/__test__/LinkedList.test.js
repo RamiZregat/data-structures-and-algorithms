@@ -1,6 +1,7 @@
 'use strict';
 
-const LinkedList = require('../LinkedList');
+const LinkedList = require('../LinkedList').LinkedList;
+const zipLists = require('../LinkedList').zipLists;
 
 describe('Linked List Test', () => {
   it('Test if creation of linkedlist works', () => {
@@ -140,5 +141,20 @@ describe('Linked List kth',()=>{
     newLinkedList.append(5);
     newLinkedList.append(6);
     expect(newLinkedList.kthFromEnd(3)).toEqual(3);
+  });
+});
+describe('Linked-List-Zip', () => {
+  it('dsgdfgd', () => {
+    const ll1 = new LinkedList();
+    const ll2 = new LinkedList();
+    ll1.append('a');
+    ll1.append('b');
+    ll1.append('c');
+    ll2.append('1');
+    ll2.append('2');
+    ll2.append('3');
+    let list = zipLists(ll1, ll2);
+    expect(list.length).toBeGreaterThan(0);
+    expect(list).toEqual('{a} -> {1} -> {b} -> {2} -> {c} -> {3} -> NULL');
   });
 });
