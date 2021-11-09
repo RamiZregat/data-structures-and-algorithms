@@ -1,11 +1,12 @@
-"use strict";
+'use strict';
 
-const Node = require("./Node");
+const Node = require('./Node');
 
 class LinkedList {
   constructor() {
     this.head = null;
     this.tail = null;
+    this.length=0;
   }
   //   ----------------------
   //   Solution without Tail
@@ -31,6 +32,7 @@ class LinkedList {
   //   ----------------------
   insert(value) {
     const newNode = new Node(value);
+    this.length++;
     if (!this.head) {
       this.head = newNode;
       return this;
@@ -63,17 +65,18 @@ class LinkedList {
 
   toString() {
     let nodePosition = this.head;
-    let stringText = "";
+    let stringText = '';
     while (nodePosition.next) {
       stringText = stringText + `{${nodePosition.value}} -> `;
-      nodePosition=nodePosition.next;
+      nodePosition = nodePosition.next;
     }
-    stringText= stringText + `{${nodePosition.value}} -> NULL`;
+    stringText = stringText + `{${nodePosition.value}} -> NULL`;
     return stringText;
   }
 
-  append(value){
+  append(value) {
     const newNode = new Node(value);
+    this.length++;
     if (!this.head) {
       this.head = newNode;
       return this;
@@ -89,7 +92,7 @@ class LinkedList {
     return this;
   }
 
-  insertAfter(value,newValue){
+  insertAfter(value, newValue) {
     let nodePosition = this.head;
     while (nodePosition.value !== value) {
       if (!nodePosition.next) {
@@ -102,17 +105,17 @@ class LinkedList {
       nodePosition = nodePosition.next;
     }
     let newNode = new Node(newValue);
-    if(!nodePosition.next){
-      nodePosition.next=newNode;
-      this.tail=newNode;
-    }else{
+    if (!nodePosition.next) {
+      nodePosition.next = newNode;
+      this.tail = newNode;
+    } else {
       let nextNode = nodePosition.next;
       nodePosition.next = newNode;
-      newNode.next=nextNode;
+      newNode.next = nextNode;
     }
   }
 
-  insertBefore(value,newValue){
+  insertBefore(value, newValue) {
     let nodePosition = this.head;
     let saveNodeBefore = this.head;
     while (nodePosition.value !== value) {
@@ -123,39 +126,56 @@ class LinkedList {
           return 'The number is not in the node';
         }
       }
-      saveNodeBefore=nodePosition;
+      saveNodeBefore = nodePosition;
       nodePosition = nodePosition.next;
     }
     let newNode = new Node(newValue);
-    if(saveNodeBefore===nodePosition){
+    if (saveNodeBefore === nodePosition) {
       saveNodeBefore.next = newNode;
-      this.head=newNode;
-    }else{
+      this.head = newNode;
+    } else {
       saveNodeBefore.next = newNode;
-      newNode.next=nodePosition;
+      newNode.next = nodePosition;
     }
   }
 
-  kthFromEnd(number){
+  // kthFromEnd(number) {
+  //   if (number < 0) {
+  //     return null;
+  //   }
+  //   if (!this.head) {
+  //     return null;
+  //   }
+  //   if (number !== parseInt(number)) {
+  //     return null;
+  //   }
+  //   let arr = this.toString().split(' -> ');
+  //   arr.pop();
+  //   console.log(arr);
+  //   if (number >= arr.length) {
+  //     return null;
+  //   }
+  //   return parseInt(arr[arr.length - number - 1].replace(/\D/g, ''));
+  // }
 
-    if(number<0){
-      return null;
+  kthFromEnd(k) {
+    if (!this.head || k < 0 || k >= this.length) {
+      return 'exception';
     }
-    if(!this.head){
-      return null;
+    if ((k === 0)) {
+      if(!this.tail){this.tail=this.head;}
+      return this.tail.value;
     }
-    if(number!==parseInt(number)){
-      return null;
+    if ((k === this.length - 1)) {
+      return this.head.value;
     }
-    let arr=this.toString().split(' -> ');
-    arr.pop();
-    console.log(arr);
-    if(number>=arr.length){
-      return null;
+
+    let currectValue = this.head;
+
+    for (let i = this.length - 1; i > k; i--) {
+      currectValue = currectValue.next;
     }
-    return parseInt(arr[arr.length-number-1].replace(/\D/g, ''));
+    return currectValue.value;
   }
-
 }
 module.exports = LinkedList;
-

@@ -106,7 +106,7 @@ describe('Linked List kth',()=>{
     newLinkedList.insert(1);
     newLinkedList.insert(2);
     newLinkedList.insert(3);
-    expect(newLinkedList.kthFromEnd(5)).toEqual(null);
+    expect(newLinkedList.kthFromEnd(5)).toEqual('exception');
   });
 
   it(('test where the number and the length of the linked list are the same'),()=>{
@@ -114,7 +114,7 @@ describe('Linked List kth',()=>{
     newLinkedList.insert(1);
     newLinkedList.insert(2);
     newLinkedList.insert(3);
-    expect(newLinkedList.kthFromEnd(3)).toEqual(null);
+    expect(newLinkedList.kthFromEnd(3)).toEqual('exception');
   });
 
   it(('test Where the number is not a positive integer'),()=>{
@@ -122,7 +122,7 @@ describe('Linked List kth',()=>{
     newLinkedList.insert(1);
     newLinkedList.insert(2);
     newLinkedList.insert(3);
-    expect(newLinkedList.kthFromEnd(-1)).toEqual(null);
+    expect(newLinkedList.kthFromEnd(-1)).toEqual('exception');
   });
 
   it(('test Where the linked list is of a size 1'),()=>{
@@ -133,12 +133,12 @@ describe('Linked List kth',()=>{
 
   it(('test where the number is not at the end, but somewhere in the middle of the linked list'),()=>{
     let newLinkedList = new LinkedList();
-    newLinkedList.insert(1);
-    newLinkedList.insert(2);
-    newLinkedList.insert(3);
-    newLinkedList.insert(4);
-    newLinkedList.insert(5);
-    newLinkedList.insert(6);
+    newLinkedList.append(1);
+    newLinkedList.append(2);
+    newLinkedList.append(3);
+    newLinkedList.append(4);
+    newLinkedList.append(5);
+    newLinkedList.append(6);
     expect(newLinkedList.kthFromEnd(3)).toEqual(3);
   });
 });
