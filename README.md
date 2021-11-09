@@ -20,4 +20,12 @@ To run your tests
 
 ### 401 Data Structures, Code Challenges
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+| Challenge                 | Link                                                       |
+| ------------------------- | ---------------------------------------------------------- |
+| array-reverse             | [link](./array-reverse/README.md)                           |
+| array-insert-shift        | [link](./array-insert-shift/README.md)                       |
+| array-binary-search       | [link](./array-binary-search/README.md)                      |
+| linked-list               | [link](./linked-list/README.md)                 |
+| linked-list-insertions    | [link](./linked-list/linked-list-insertions-README.md) |
+| linked-list-kth           | [link](./linked-list/linked-list-kth-README.md)        |
+| Linked-List-Zip           | [link](./linked-list/linked-list-Zip-README.md)          |
