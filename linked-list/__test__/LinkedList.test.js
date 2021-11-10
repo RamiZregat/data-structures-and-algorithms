@@ -46,7 +46,7 @@ describe('Linked List Test', () => {
     newLinkedList.insert(1);
     newLinkedList.insert(2);
     newLinkedList.insert(3);
-    expect(newLinkedList.toString()).toEqual('{1} -> {2} -> {3} -> NULL');
+    expect(newLinkedList.toString()).toEqual('{3} -> {2} -> {1} -> NULL');
   });
 
   it('Test if Can successfully add a node to the end of the linked list',()=>{
@@ -69,8 +69,8 @@ describe('Linked List Test', () => {
 
   it('Can successfully insert a node before a node located in the middle of a linked list',()=>{
     let newLinkedList = new LinkedList();
-    newLinkedList.insert(1);
-    newLinkedList.insert(2);
+    newLinkedList.append(1);
+    newLinkedList.append(2);
     newLinkedList.insertBefore(2,'Happy Path');
     expect(newLinkedList.head.next.value).toEqual('Happy Path');
   });
@@ -93,8 +93,8 @@ describe('Linked List Test', () => {
 
   it('Can successfully insert a node after the last node of the linked list',()=>{
     let newLinkedList = new LinkedList();
-    newLinkedList.insert(1);
-    newLinkedList.insert(2);
+    newLinkedList.append(1);
+    newLinkedList.append(2);
     newLinkedList.insertAfter(2,'Happy Path');
     expect(newLinkedList.tail.value).toEqual('Happy Path');
   });
@@ -128,7 +128,7 @@ describe('Linked List kth',()=>{
 
   it(('test Where the linked list is of a size 1'),()=>{
     let newLinkedList = new LinkedList();
-    newLinkedList.insert(1);
+    newLinkedList.append(1);
     expect(newLinkedList.kthFromEnd(0)).toEqual(1);
   });
 
