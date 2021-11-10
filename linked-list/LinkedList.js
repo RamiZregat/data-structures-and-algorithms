@@ -30,22 +30,31 @@ class LinkedList {
   //   ----------------------
   //   Solution with Tail
   //   ----------------------
-  insert(value) {
-    const newNode = new Node(value);
-    this.length++;
-    if (!this.head) {
-      this.head = newNode;
-      return this;
-    }
-    if (!this.head.next) {
-      this.head.next = newNode;
-    }
-    if (this.tail) {
-      this.tail.next = newNode;
-    }
-    this.tail = newNode;
+  // insert(value) {
+  //   const newNode = new Node(value);
+  //   this.length++;
+  //   if (!this.head) {
+  //     this.head = newNode;
+  //     return this;
+  //   }
+  //   if (!this.head.next) {
+  //     this.head.next = newNode;
+  //   }
+  //   if (this.tail) {
+  //     this.tail.next = newNode;
+  //   }
+  //   this.tail = newNode;
 
-    return this;
+  //   return this;
+  // }
+  insert(value) {
+    const node = new Node(value);
+    if (!this.head) {
+      this.head = node;
+    } else {
+      node.next = this.head;
+      this.head = node;
+    }
   }
 
   includes(value) {
