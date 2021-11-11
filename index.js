@@ -1,6 +1,6 @@
 'use strict';
 
-const LinkedList = require('./linked-list/LinkedList');
+const {LinkedList} = require('./linked-list/LinkedList');
 
 
 const newList1=new LinkedList();
@@ -18,8 +18,40 @@ newList2.append(4);
 newList2.append(6);
 newList2.append(8);
 
+function zipLists(list1, list2) {
+  let curValue1 = list1.head;
+  let curValue2 = list2.head;
+  let list3 = new LinkedList();
+  while (curValue1 || curValue2) {
+    if (curValue1 !== null) {
+      list3.append(curValue1.value);
+      curValue1 = curValue1.next;
+    }
+    if (curValue2 !== null) {
+      list3.append(curValue2.value);
+      curValue2 = curValue2.next;
+    }
+  }
+  return list3.toString();}
+
+
+
+
+function reveredList(list) {
+  let node = list.head;
+  const list2 = new LinkedList();
+  while (node) {
+    list2.insert(node.value);
+    node = node.next;
+  }
+  list=list2;
+  return list;
+}
+
+
 
 
 console.log(newList1);
 console.log(newList2);
-console.log(LinkedList.zipLists(newList1,newList2));
+console.log(zipLists(newList1,newList2));
+console.log(reveredList(newList1));
