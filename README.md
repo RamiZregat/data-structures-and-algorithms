@@ -29,3 +29,5 @@ To run your tests
 | linked-list-insertions    | [link](./linked-list/linked-list-insertions-README.md) |
 | linked-list-kth           | [link](./linked-list/linked-list-kth-README.md)        |
 | Linked-List-Zip           | [link](./linked-list/linked-list-Zip-README.md)          |
+| Stack-and-Queue          | [link](./Stack-and-Queue/README.md)          |
+| Stack-and-Queue          | [link](./Stack-and-Queue/Stack-and-Queue-Pseudo-README.md)          |
