@@ -1,8 +1,9 @@
 'use strict';
 
 const {LinkedList} = require('./linked-list/LinkedList');
-const Queue=require('./Stack-and-Queue/queue')
-const Stack=require('./Stack-and-Queue/stack')
+const Queue=require('./Stack-and-Queue/queue');
+const Stack=require('./Stack-and-Queue/stack');
+const PseudoQueue=require('./Stack-and-Queue/pseudo-queue');
 
 
 // const newList1=new LinkedList();
@@ -70,13 +71,23 @@ function reveredList(list) {
 // newStack.pop();
 // newStack.pop(); // should console log the error message
 
-const queue = new Queue();
+// const queue = new Queue();
 
-queue.enqueue(1);
-queue.enqueue(2);
-queue.enqueue(3);
+// queue.enqueue(1);
+// queue.enqueue(2);
+// queue.enqueue(3);
 
-console.log(queue);
+// console.log(queue);
 
-queue.dequeue();
-console.log(queue);
+// queue.dequeue();
+// console.log(queue);
+
+
+// const test=new PseudoQueue;
+// test.enqueue(1);
+// test.enqueue(2);
+// test.enqueue(3);
+// test.enqueue(4);
+// console.log(test.dequeue());
+// console.log(test.enqueue(5));
+// console.log(test.dequeue());
