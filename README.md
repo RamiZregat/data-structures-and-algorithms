@@ -30,4 +30,5 @@ To run your tests
 | linked-list-kth           | [link](./linked-list/linked-list-kth-README.md)        |
 | Linked-List-Zip           | [link](./linked-list/linked-list-Zip-README.md)          |
 | Stack-and-Queue          | [link](./Stack-and-Queue/README.md)          |
-| Stack-and-Queue          | [link](./Stack-and-Queue/Stack-and-Queue-Pseudo-README.md)          |
+| pseudo queue         | [link](./Stack-and-Queue/pseudo-queue-README.md)          |
+| queue-animal-shelter         | [link](./Stack-and-Queue/queue-animal-shelter-README.md)          |
