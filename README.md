@@ -32,3 +32,4 @@ To run your tests
 | Stack-and-Queue          | [link](./Stack-and-Queue/README.md)          |
 | pseudo queue         | [link](./Stack-and-Queue/pseudo-queue-README.md)          |
 | queue-animal-shelter         | [link](./Stack-and-Queue/queue-animal-shelter-README.md)          |
+| stack-queue-brackets        | [link](./Stack-and-Queue/stack-queue-brackets-README.md)          |
