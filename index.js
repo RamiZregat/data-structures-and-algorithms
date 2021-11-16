@@ -91,3 +91,26 @@ function reveredList(list) {
 // console.log(test.dequeue());
 // console.log(test.enqueue(5));
 // console.log(test.dequeue());
+
+
+
+function stackQueueBrackets(string) {
+  const arr = [];
+  const open = ['(', '{', '['];
+  const closed = [')', '}', ']'];
+  for (let i = 0; i < string.length; i++) {
+    if (open.includes(string[i])) {
+      arr.push(string[i]);
+    }
+    if (closed.includes(string[i])) {
+      const temp = open[closed.indexOf(string[i])];
+      if (arr[arr.length - 1] === temp) {
+        arr.splice(-1, 1);
+      } else {
+        arr.push(string[i]);
+      }
+    }
+  }
+  return arr.length === 0 ? true : false;
+}
+// console.log(stackQueueBrackets('{he(ll)o}'));
