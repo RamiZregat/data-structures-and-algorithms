@@ -47,6 +47,19 @@ class Stack {
   isEmpty() {
     return this.top === null;
   }
+
+  getMax(){
+    if(this.isEmpty()){return 'exception';}
+    let currentNode=this.top;
+    let max=currentNode.value;
+    while(currentNode.next){
+      if(currentNode.next.value>max){
+        max=currentNode.next.value;
+      }
+      currentNode=currentNode.next;
+    }
+    return max;
+  }
 }
 
 

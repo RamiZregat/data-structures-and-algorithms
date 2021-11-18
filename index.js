@@ -114,3 +114,58 @@ function stackQueueBrackets(string) {
   return arr.length === 0 ? true : false;
 }
 // console.log(stackQueueBrackets('{he(ll)o}'));
+
+// const newStack = new Stack();
+
+// newStack.push(1);
+// newStack.push(3);
+// newStack.push(2);
+// newStack.push(6);
+// newStack.push(4);
+// console.log(newStack.getMax());
+
+// string = ABCDE
+// k = 3
+
+// function DuckDuckGoose(string,k){
+//   let queue=new Queue;
+//   let vipCharacter=string[k];
+
+//   for(let i=0;i<string.length;i++){
+//     queue.enqueue(string[i]);
+//   }
+
+//   for(let i=0;i<string.length;i++){
+//     if(vipCharacter===string[i]){
+//       queue.enqueue(string[i]);
+//       //A->B->C->D->E->C
+//     }
+//     queue.dequeue();
+//   }
+
+//   return queue.dequeue();
+// }
+
+
+
+
+let newQueue = new Queue();
+let dequeueValue = '';
+function duckDuckGoose (listOfString , k){
+  if (listOfString.length !== 0){
+    for (let i=0; i<listOfString.length; i++){
+      newQueue .enqueue (listOfString[i]);
+    }
+  }else {
+    return 'empty list !';
+  }
+  while (newQueue.length !== 1 ){
+    for (let y =0 ; y< k-1; y++){
+      dequeueValue = newQueue .dequeue();
+      newQueue .enqueue(dequeueValue);
+    }
+    newQueue .dequeue();
+  }
+  return `last Person is : ${newQueue .dequeue()} `;
+}
+console.log(duckDuckGoose('ABCDEF',3));
