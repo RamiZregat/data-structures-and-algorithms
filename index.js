@@ -4,6 +4,9 @@ const {LinkedList} = require('./linked-list/LinkedList');
 const Queue=require('./Stack-and-Queue/queue');
 const Stack=require('./Stack-and-Queue/stack');
 const PseudoQueue=require('./Stack-and-Queue/pseudo-queue');
+const {BT,Node}=require('./trees/Binary-tree');
+const {BSearchT}=require('./trees/Binary-Search-tree');
+
 
 
 // const newList1=new LinkedList();
@@ -168,4 +171,4 @@ function duckDuckGoose (listOfString , k){
   }
   return `last Person is : ${newQueue .dequeue()} `;
 }
-console.log(duckDuckGoose('ABCDEF',3));
+// console.log(duckDuckGoose('ABCDEF',3));
