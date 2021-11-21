@@ -172,3 +172,8 @@ function duckDuckGoose (listOfString , k){
   return `last Person is : ${newQueue .dequeue()} `;
 }
 // console.log(duckDuckGoose('ABCDEF',3));
+
+
+const tree=new BT();
+tree.root=new Node(5,new Node(6,new Node(4),new Node(3)),new Node(7));
+console.log(tree.findMaximum());
