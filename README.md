@@ -34,3 +34,4 @@ To run your tests
 | queue-animal-shelter         | [link](./Stack-and-Queue/queue-animal-shelter-README.md)          |
 | stack-queue-brackets        | [link](./Stack-and-Queue/stack-queue-brackets-README.md)          |
 | Tree        | [link](./trees/README.md)          |
+| Tree-Max        | [link](./trees/tree-max-README.md)          |
