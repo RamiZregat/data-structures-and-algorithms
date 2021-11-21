@@ -50,6 +50,17 @@ class BT {
     _traverse(this.root);
     return arr;
   }
+  findMaximum(){
+    if(!this.root){return 'exception';}
+    let maxNumber=this.root.value;
+    const _traverse=(node)=>{
+      if(node.value>maxNumber){maxNumber=node.value;}
+      if(node.left){_traverse(node.left);}
+      if(node.right){_traverse(node.right);}
+    };
+    _traverse(this.root);
+    return maxNumber;
+  }
 }
 module.exports={
   Node,
