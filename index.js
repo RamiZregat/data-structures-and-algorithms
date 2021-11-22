@@ -6,6 +6,7 @@ const Stack=require('./Stack-and-Queue/stack');
 const PseudoQueue=require('./Stack-and-Queue/pseudo-queue');
 const {BT,Node}=require('./trees/Binary-tree');
 const {BSearchT}=require('./trees/Binary-Search-tree');
+const breadthFirst=require('./trees/tree-breadth-first');
 
 
 
@@ -173,7 +174,28 @@ function duckDuckGoose (listOfString , k){
 }
 // console.log(duckDuckGoose('ABCDEF',3));
 
+let tree;
+const one = new Node(1);
+const two = new Node(2);
+const three = new Node(3);
+const four = new Node(4);
+const five = new Node(5);
+const six = new Node(6);
+const seven = new Node(7);
+const eight = new Node(8);
+const nine = new Node(9);
+one.left = two;
+one.right = three;
+two.left = six;
+three.left = four;
+three.right = five;
+six.right = seven;
+seven.left = eight;
+seven.right = nine;
+tree = new BT(one);
 
-const tree=new BT();
-tree.root=new Node(5,new Node(6,new Node(4),new Node(3)),new Node(7));
-console.log(tree.findMaximum());
+// const tree=new BT();
+// tree.root=new Node(5,new Node(6,new Node(4),new Node(3)),new Node(7,new Node(9)));
+// console.log(tree.findMaximum());
+// console.log(tree.root.right.left);
+console.log(breadthFirst(tree));
