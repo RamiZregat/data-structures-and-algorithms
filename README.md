@@ -36,3 +36,4 @@ To run your tests
 | Tree        | [link](./trees/README.md)          |
 | Tree-Max        | [link](./trees/tree-max-README.md)          |
 | Tree-Breadth-First        | [link](./trees/tree-breadth-first-README.md)          |
+| Fizz-Buzz-Tree        | [link](./trees/fizz-buzz-tree-README.md)          |
