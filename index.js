@@ -8,6 +8,7 @@ const {BT,Node}=require('./trees/Binary-tree');
 const {BSearchT}=require('./trees/Binary-Search-tree');
 const breadthFirst=require('./trees/tree-breadth-first');
 const fizzBuzz=require('./trees/fizz-buzz-tree');
+const InsertionSort=require('./InsertionSort/InsertionSort');
 
 
 
@@ -177,12 +178,16 @@ function duckDuckGoose (listOfString , k){
 
 
 
-const tree=new BT();
-tree.root=new Node(5,new Node(15,new Node(4),new Node(3)));
+const tree=new BSearchT();
+tree.root=new Node(5,new Node(14,new Node(4),new Node(3)));
 // console.log(tree.findMaximum());
 
 // console.log(tree.root.right.left);
 
 // console.log(breadthFirst(tree));
 
-console.log(fizzBuzz(tree));
+// console.log(fizzBuzz(tree));
+// console.log(tree.oddNumbers());
+
+let array=[1,12,33,24,51,16,7,8];
+console.log(InsertionSort(array));
