@@ -35,6 +35,22 @@ class BSearchT extends BT {
     };
     return _traverse(this.root);
   }
+
+
+  oddNumbers() {
+    if (!this.root) throw new TypeError('Empty Tree');
+    let sum=0;
+    const _traverse = (node) => {
+      if (node.value % 2 !==0) {sum=sum+node.value;}
+
+      if ( node.right) return _traverse(node.right);
+
+      if ( node.left) return _traverse(node.left);
+
+    };
+    _traverse(this.root);
+    return(sum);
+  }
 }
 
 module.exports={
