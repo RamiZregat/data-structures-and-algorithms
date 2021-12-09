@@ -61,15 +61,33 @@ class LinkedList {
     let nodePosition = this.head;
     while (nodePosition.value !== value) {
       if (!nodePosition.next) {
-        if (nodePosition.value === value) {
-          return true;
-        } else {
-          return false;
-        }
+        return false;
       }
       nodePosition = nodePosition.next;
     }
     return true;
+  }
+
+  containEntry(value) {
+    let nodePosition = this.head;
+
+    while (Object.keys(nodePosition.value)[0] !== value) {
+      if (!nodePosition.next) {
+        return false;
+      }
+      nodePosition = nodePosition.next;
+    }
+    return nodePosition.value;
+  }
+  containValue(value) {
+    let nodePosition = this.head;
+    while (Object.keys(nodePosition.value)[0] !== value) {
+      if (!nodePosition.next) {
+        return false;
+      }
+      nodePosition = nodePosition.next;
+    }
+    return Object.values(nodePosition.value)[0];
   }
 
   toString() {
@@ -204,7 +222,7 @@ function zipLists(list1, list2) {
   }
   return list3.toString();
 
-  
+
 }
 module.exports ={
   LinkedList,
