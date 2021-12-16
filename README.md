@@ -39,3 +39,4 @@ To run your tests
 | Fizz-Buzz-Tree        | [link](./trees/fizz-buzz-tree-README.md)          |
 | Insertion Sort       | [link](./InsertionSort/BLOG.md)          |
 | Hash Table      | [link](./hashTable/README.md)          |
+| Repeated Word      | [link](./hashTable/repeatedWords.md)          |
