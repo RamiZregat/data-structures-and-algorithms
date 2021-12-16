@@ -1,11 +1,11 @@
 'use strict';
 const {LinkedList} = require('../linked-list/LinkedList');
 
-class HashMap {
+class Hashmap {
 
   constructor(size) {
     this.size = size;
-    this.map = new Array(size);
+    this.storage = new Array(size);
   }
   getHash(key) {
     const assciSum = key.split('').reduce((p, n) => p + n.charCodeAt(0), 0);
@@ -18,28 +18,59 @@ class HashMap {
 
     const entry = { [key]: value };
 
-    if (!this.map[hash]) {
-      this.map[hash] = new LinkedList();
+    if (!this.storage[hash]) {
+      this.storage[hash] = new LinkedList();
     }
 
-    this.map[hash].insert(entry);
+    this.storage[hash].insert(entry);
 
+  }
+  contains(key) {
+    const hash = this.code(key);
+    if (this.storage[hash]) return true;
+    return false;
   }
   getEntry(key) {
     const hash = this.getHash(key);
 
-    return this.map[hash].containEntry(key);
+    return this.storage[hash].containEntry(key);
   }
   getValue(key) {
     const hash = this.getHash(key);
-    if(this.map[hash].containValue(key)){
-      return this.map[hash].containValue(key);
+    if(this.storage[hash].containValue(key)){
+      return this.storage[hash].containValue(key);
     }else{
       return 'Value is not defined';
     }
 
   }
+  repeatedWord(string) {
+    const array = string.split(' ');
+    let repeated = '';
+    let shouldSkip = false;
+    array.forEach((word) => {
+      if (shouldSkip) return;
+
+      if (word.includes(',')) {
+        word = word.split('');
+        word.pop();
+        word = word.join('');
+      }
+
+      word = word.toLowerCase();
+      const hash = this.getHash(word);
+      if (!this.storage[hash]) {
+        const linkedList = new LinkedList();
+        linkedList.insert({ [word]: word });
+        this.storage[hash] = linkedList;
+      } else if (this.storage[hash].head.value[word] === word) {
+        shouldSkip = true;
+        return (repeated = word);
+      } else this.storage[hash].insert({ [word]: word });
+    });
+    return repeated;
+  }
 }
 
 
-module.exports = HashMap;
+module.exports = {Hashmap};

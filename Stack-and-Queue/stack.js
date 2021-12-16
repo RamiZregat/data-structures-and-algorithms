@@ -31,7 +31,7 @@ class Stack {
     const temp = this.top;
     this.top = this.top.next;
     temp.next = null;
-    return temp.value;
+    return (temp.value);
   }
 
 

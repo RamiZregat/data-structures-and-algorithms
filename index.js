@@ -87,6 +87,8 @@ function reveredList(list) {
 // console.log(queue);
 
 // queue.dequeue();
+// console.log(queue.dequeue());
+// console.log(queue.dequeue());
 // console.log(queue);
 
 
@@ -131,30 +133,6 @@ function stackQueueBrackets(string) {
 // newStack.push(4);
 // console.log(newStack.getMax());
 
-// string = ABCDE
-// k = 3
-
-// function DuckDuckGoose(string,k){
-//   let queue=new Queue;
-//   let vipCharacter=string[k];
-
-//   for(let i=0;i<string.length;i++){
-//     queue.enqueue(string[i]);
-//   }
-
-//   for(let i=0;i<string.length;i++){
-//     if(vipCharacter===string[i]){
-//       queue.enqueue(string[i]);
-//       //A->B->C->D->E->C
-//     }
-//     queue.dequeue();
-//   }
-
-//   return queue.dequeue();
-// }
-
-
-
 
 let newQueue = new Queue();
 let dequeueValue = '';
@@ -175,7 +153,7 @@ function duckDuckGoose (listOfString , k){
   }
   return `last Person is : ${newQueue .dequeue()} `;
 }
-// console.log(duckDuckGoose('ABCDEF',3));
+// console.log(duckDuckGoose('ABCDE',3));
 
 
 
@@ -194,12 +172,36 @@ tree.root=new Node(5,new Node(14,new Node(4),new Node(3)));
 // console.log(InsertionSort(array));
 
 
-const myHash= new HashMap(5);
-myHash.add('r','z');
-myHash.add('ra','zr');
-myHash.add('ram','zre');
-myHash.add('rami','zreg');
-myHash.add('rami1','zrega');
-myHash.add('rami12','zregat');
+// const myHash= new HashMap(5);
+// myHash.add('r','z');
+// myHash.add('ra','zr');
+// myHash.add('ram','zre');
+// myHash.add('rami','zreg');
+// myHash.add('rami1','zrega');
+// myHash.add('rami12','zregat');
 
-console.log(myHash.getEntry('rami'));
+// console.log(myHash.getEntry('rami'));
+
+
+function mathOperation (string){
+  if (string.length===0 || !string){return 'exception';}
+  let finalNumber;
+  const newStack= new Stack;
+  let operations=[];
+  let firstNumber;
+  for(let i=0; i<string.length ;i++){
+    newStack.push(string[i]);
+    if(isNaN(parseInt(newStack.top.value))){
+      operations.push(newStack.pop);
+    }
+  }
+  firstNumber=newStack.pop;
+  for(let y=0; y < operations.length ;y++){
+    finalNumber= firstNumber + operations[y] + newStack.pop;
+    firstNumber=finalNumber;
+    operations.splice(0,1);
+  }
+  return finalNumber;
+}
+
+// console.log(mathOperation('154*+'));
