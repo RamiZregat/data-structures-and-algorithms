@@ -42,3 +42,4 @@ To run your tests
 | Repeated Word      | [link](./hashTable/repeatedWords.md)          |
 | Tree Intersection      | [link](./hashTable/treeIntersection.md)          |
 | Left Join      | [link](./hashTable/leftJoin.md)          |
+| Graph      | [link](./graph/README.md)          |
