@@ -40,3 +40,4 @@ To run your tests
 | Insertion Sort       | [link](./InsertionSort/BLOG.md)          |
 | Hash Table      | [link](./hashTable/README.md)          |
 | Repeated Word      | [link](./hashTable/repeatedWords.md)          |
+| Tree Intersection      | [link](./hashTable/treeIntersection.md)          |
